@@ -5,7 +5,7 @@ import BetDealer from 'bet-dealer';
 class BetDealerChrome extends BetDealer {
   addListener () {
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-      this.sendAnswer(message, this.appId, sendResponse);
+      this.processMessage(message, this.appId, sendResponse);
       return true;
     });
     super.addListener();
