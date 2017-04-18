@@ -1,3 +1,5 @@
+/* global chrome:true */
+
 'use strict';
 
 import BetDealer from 'bet-dealer';
@@ -11,7 +13,7 @@ class BetDealerChrome extends BetDealer {
     super.addListener();
   }
 
-  send (msg, cb) {
+  static send (msg, cb) {
     chrome.runtime.sendMessage(null, msg, null, cb);
   }
 }
